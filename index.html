@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cloud Computing | Vercel</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 html{
@@ -21,199 +18,157 @@ html{
 }
 
 body{
-    background:#f5f7fb;
-    color:#222;
+    background:#0f172a;
+    color:#f8fafc;
 }
 
 header{
-    width:100%;
     position:fixed;
     top:0;
-    left:0;
-    background:#fff;
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    width:100%;
+    background:#111827;
+    box-shadow:0 5px 20px rgba(0,0,0,.5);
     z-index:1000;
 }
 
 nav{
     width:90%;
     margin:auto;
-    height:75px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    height:70px;
 }
 
 .logo{
     font-size:24px;
-    font-weight:700;
-    color:#2563eb;
+    font-weight:bold;
+    color:#3b82f6;
 }
 
 nav ul{
     display:flex;
     list-style:none;
-    gap:30px;
+    gap:25px;
 }
 
-nav ul li a{
+nav a{
+    color:white;
     text-decoration:none;
-    color:#333;
-    font-weight:500;
     transition:.3s;
 }
 
-nav ul li a:hover{
-    color:#2563eb;
+nav a:hover{
+    color:#3b82f6;
 }
 
 .hero{
-
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:40px;
-
-    background:
-    linear-gradient(135deg,#2563eb,#1d4ed8);
-
-    color:white;
-
+    padding:30px;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
 }
 
 .hero h1{
-
-    font-size:55px;
+    font-size:50px;
     margin-bottom:20px;
-
 }
 
 .hero p{
-
     max-width:700px;
     margin:auto;
     line-height:1.8;
-
+    color:#cbd5e1;
 }
 
-.button{
-
+.btn{
     display:inline-block;
-    margin-top:35px;
-    background:white;
-    color:#2563eb;
+    margin-top:30px;
     padding:15px 35px;
-    border-radius:40px;
+    background:#2563eb;
+    color:white;
     text-decoration:none;
-    font-weight:600;
+    border-radius:30px;
     transition:.3s;
-
 }
 
-.button:hover{
-
-    transform:translateY(-4px);
-
+.btn:hover{
+    background:#1d4ed8;
 }
 
 section{
-
     padding:90px 10%;
-
 }
 
-.title{
-
+.judul{
     text-align:center;
     font-size:35px;
-    margin-bottom:60px;
-
+    margin-bottom:50px;
 }
 
-.cards{
-
+.grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-
+    gap:25px;
 }
 
 .card{
-
-    background:white;
-    padding:35px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #334155;
     transition:.3s;
-
 }
 
 .card:hover{
-
-    transform:translateY(-10px);
-
+    transform:translateY(-8px);
 }
 
 .card h3{
-
+    color:#60a5fa;
     margin-bottom:15px;
-    color:#2563eb;
-
 }
 
-.stats{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-text-align:center;
-
+.statistik{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    text-align:center;
 }
 
-.stat{
-
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+.box{
+    background:#1e293b;
+    padding:30px;
+    border-radius:15px;
 }
 
-.number{
-
-font-size:45px;
-font-weight:bold;
-color:#2563eb;
-
+.angka{
+    font-size:45px;
+    color:#3b82f6;
+    font-weight:bold;
 }
 
 footer{
-
-background:#111827;
-color:white;
-padding:35px;
-text-align:center;
-
+    background:#111827;
+    text-align:center;
+    padding:25px;
+    color:#94a3b8;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-
-font-size:38px;
-
+font-size:35px;
 }
 
 nav ul{
-
 display:none;
-
 }
 
 }
-
 </style>
 
 </head>
@@ -224,16 +179,14 @@ display:none;
 
 <nav>
 
-<div class="logo">Cloud Computing</div>
+<div class="logo">
+Cloud Computing
+</div>
 
 <ul>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#features">Features</a></li>
-
-<li><a href="#statistics">Statistics</a></li>
-
+<li><a href="#tentang">Tentang</a></li>
+<li><a href="#fitur">Fitur</a></li>
+<li><a href="#statistik">Statistik</a></li>
 </ul>
 
 </nav>
@@ -244,144 +197,105 @@ display:none;
 
 <div>
 
-<h1>Cloud Computing Using Vercel</h1>
+<h1>Implementasi Cloud Computing Menggunakan Vercel</h1>
 
 <p>
 
-This website demonstrates a simple cloud computing implementation by deploying a static website using the Vercel platform. The project is developed using HTML, CSS, and JavaScript in a single file for simplicity and performance.
+Website ini merupakan implementasi sederhana layanan Cloud Computing dengan memanfaatkan platform Vercel sebagai media deployment website statis. Seluruh aplikasi dibuat menggunakan HTML, CSS, dan JavaScript dalam satu file sehingga mudah dipelajari serta mudah di-deploy.
 
 </p>
 
-<a href="#about" class="button">Explore Project</a>
+<a href="#tentang" class="btn">Pelajari Lebih Lanjut</a>
 
 </div>
 
 </section>
 
-<section id="about">
+<section id="tentang">
 
-<h2 class="title">About Project</h2>
+<h2 class="judul">Tentang Cloud Computing</h2>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">
-
-<h3>Cloud Computing</h3>
-
+<h3>Apa itu Cloud Computing?</h3>
 <p>
-
-Cloud Computing enables users to access computing resources over the internet efficiently and securely.
-
+Cloud Computing adalah teknologi yang memungkinkan pengguna mengakses server, penyimpanan, database, dan layanan lainnya melalui internet.
 </p>
-
 </div>
 
 <div class="card">
-
-<h3>Vercel</h3>
-
+<h3>Mengapa Vercel?</h3>
 <p>
-
-Vercel is a cloud platform designed for deploying frontend applications with fast global delivery.
-
+Vercel menyediakan proses deployment yang cepat, mudah digunakan, dan sangat cocok untuk website statis maupun aplikasi modern.
 </p>
-
 </div>
 
 <div class="card">
-
-<h3>Deployment</h3>
-
+<h3>Tujuan Praktikum</h3>
 <p>
-
-This website can be deployed directly from GitHub using the Vercel platform without additional configuration.
-
+Mempelajari proses deployment website menggunakan layanan Cloud Computing secara langsung melalui platform Vercel.
 </p>
-
 </div>
 
 </div>
 
 </section>
 
-<section id="features">
+<section id="fitur">
 
-<h2 class="title">Project Features</h2>
+<h2 class="judul">Keunggulan Website</h2>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">
-
-<h3>Responsive Design</h3>
-
-<p>Optimized for desktop, tablet, and mobile devices.</p>
-
+<h3>Responsif</h3>
+<p>Tampilan menyesuaikan desktop, tablet, dan smartphone.</p>
 </div>
 
 <div class="card">
-
-<h3>Single File</h3>
-
-<p>HTML, CSS, and JavaScript are integrated into one document.</p>
-
+<h3>Sederhana</h3>
+<p>Seluruh kode berada dalam satu file HTML.</p>
 </div>
 
 <div class="card">
-
-<h3>Modern Interface</h3>
-
-<p>Clean layout with soft colors, shadows, and smooth spacing.</p>
-
+<h3>Cepat</h3>
+<p>Website ringan sehingga proses loading menjadi lebih cepat.</p>
 </div>
 
 <div class="card">
-
-<h3>Fast Deployment</h3>
-
-<p>Ready to deploy directly using GitHub and Vercel.</p>
-
+<h3>Cloud Ready</h3>
+<p>Siap diunggah ke GitHub dan langsung di-deploy menggunakan Vercel.</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="statistics">
+<section id="statistik">
 
-<h2 class="title">Statistics</h2>
+<h2 class="judul">Statistik</h2>
 
-<div class="stats">
+<div class="statistik">
 
-<div class="stat">
-
-<div class="number" data-target="100">0</div>
-
-<p>Responsive</p>
-
+<div class="box">
+<div class="angka" data-target="100">0</div>
+<p>Responsif</p>
 </div>
 
-<div class="stat">
-
-<div class="number" data-target="99">0</div>
-
-<p>Availability</p>
-
+<div class="box">
+<div class="angka" data-target="99">0</div>
+<p>Ketersediaan</p>
 </div>
 
-<div class="stat">
-
-<div class="number" data-target="1">0</div>
-
-<p>Second Deployment</p>
-
+<div class="box">
+<div class="angka" data-target="1">0</div>
+<p>Detik Deploy</p>
 </div>
 
-<div class="stat">
-
-<div class="number" data-target="24">0</div>
-
-<p>Cloud Service</p>
-
+<div class="box">
+<div class="angka" data-target="24">0</div>
+<p>Layanan Cloud</p>
 </div>
 
 </div>
@@ -390,39 +304,40 @@ This website can be deployed directly from GitHub using the Vercel platform with
 
 <footer>
 
-<p>
+<h3>Cloud Computing - Vercel</h3>
 
-Cloud Computing Project • Universitas Muhammadiyah Sukabumi
+<p>Program Studi Teknik Informatika</p>
 
-</p>
+<p>Fakultas Sains dan Teknologi</p>
+
+<p>Universitas Muhammadiyah Sukabumi</p>
+
+<p>2026</p>
 
 </footer>
 
 <script>
 
-const numbers=document.querySelectorAll(".number");
+const angka=document.querySelectorAll(".angka");
 
-numbers.forEach(counter=>{
+angka.forEach(item=>{
 
 const update=()=>{
 
-const target=+counter.getAttribute("data-target");
+const target=+item.dataset.target;
+const sekarang=+item.innerText;
 
-const count=+counter.innerText;
+const tambah=Math.ceil(target/30);
 
-const speed=30;
+if(sekarang<target){
 
-const increment=Math.ceil(target/speed);
+item.innerText=sekarang+tambah;
 
-if(count<target){
-
-counter.innerText=count+increment;
-
-setTimeout(update,40);
+setTimeout(update,50);
 
 }else{
 
-counter.innerText=target;
+item.innerText=target;
 
 }
 
