@@ -3,351 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cloud Computing | Vercel</title>
-
+<title>Cloud Computing - MCOH DIKA HERDIAN SHOFA</title>
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+    :root {
+        --bg-light: #fdfdfd;
+        --text-dark: #121212;
+        --gray: #666666;
+        --border: #e0e0e0;
+    }
 
-html{
-    scroll-behavior:smooth;
-}
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
+    
+    body { background-color: var(--bg-light); color: var(--text-dark); }
 
-body{
-    background:#0f172a;
-    color:#f8fafc;
-}
+    .layout-wrapper { display: flex; min-height: 100vh; }
 
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:#111827;
-    box-shadow:0 5px 20px rgba(0,0,0,.5);
-    z-index:1000;
-}
+    /* Left Fixed Sidebar (Hero & Nav) */
+    .sidebar { width: 40%; height: 100vh; position: sticky; top: 0; padding: 60px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--border); background: #fff; }
+    
+    .brand { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 60px; }
+    
+    .hero-title h1 { font-size: 4rem; line-height: 1; margin-bottom: 20px; font-weight: 500; letter-spacing: -1.5px; }
+    .hero-title p { color: var(--gray); font-size: 1.1rem; line-height: 1.6; max-width: 90%; }
 
-nav{
-    width:90%;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    height:70px;
-}
+    .nav-links { display: flex; flex-direction: column; gap: 15px; }
+    .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; transition: 0.3s; border-bottom: 1px solid transparent; width: fit-content; }
+    .nav-links a:hover { border-bottom: 1px solid var(--text-dark); }
 
-.logo{
-    font-size:24px;
-    font-weight:bold;
-    color:#3b82f6;
-}
+    /* Right Scrolling Content */
+    .content { width: 60%; padding: 60px 80px; }
+    
+    .section { margin-bottom: 120px; }
+    .section-title { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
+    .text-block p { font-size: 1.5rem; line-height: 1.6; color: var(--text-dark); font-weight: 300; }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
+    /* Minimalist Service List */
+    .service-list { list-style: none; }
+    .service-item { border-bottom: 1px solid var(--border); padding: 30px 0; display: flex; flex-direction: column; gap: 10px; transition: 0.3s; }
+    .service-item:hover { padding-left: 20px; background: #fafafa; }
+    .service-item h3 { font-size: 1.8rem; font-weight: 400; }
+    .service-item p { color: var(--gray); font-size: 1.1rem; }
 
-nav a:hover{
-    color:#3b82f6;
-}
+    footer { margin-top: 50px; font-size: 0.9rem; color: var(--gray); }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:30px;
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-}
-
-.hero h1{
-    font-size:50px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
-    color:#cbd5e1;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 35px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#1d4ed8;
-}
-
-section{
-    padding:90px 10%;
-}
-
-.judul{
-    text-align:center;
-    font-size:35px;
-    margin-bottom:50px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:#1e293b;
-    padding:30px;
-    border-radius:15px;
-    border:1px solid #334155;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h3{
-    color:#60a5fa;
-    margin-bottom:15px;
-}
-
-.statistik{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
-    text-align:center;
-}
-
-.box{
-    background:#1e293b;
-    padding:30px;
-    border-radius:15px;
-}
-
-.angka{
-    font-size:45px;
-    color:#3b82f6;
-    font-weight:bold;
-}
-
-footer{
-    background:#111827;
-    text-align:center;
-    padding:25px;
-    color:#94a3b8;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:35px;
-}
-
-nav ul{
-display:none;
-}
-
-}
+    /* Responsive Stack for Mobile */
+    @media(max-width: 992px) {
+        .layout-wrapper { flex-direction: column; }
+        .sidebar { width: 100%; height: auto; position: relative; padding: 40px; border-right: none; border-bottom: 1px solid var(--border); }
+        .content { width: 100%; padding: 40px; }
+        .hero-title h1 { font-size: 3rem; }
+        .nav-links { margin-top: 40px; }
+    }
 </style>
-
 </head>
-
 <body>
 
-<header>
+<div class="layout-wrapper">
+    <aside class="sidebar">
+        <div>
+            <div class="brand">Project UAS.</div>
+            <div class="hero-title">
+                <h1>Cloud<br>Computing.</h1>
+                <p>Mendemonstrasikan efisiensi deployment menggunakan ekosistem cloud modern melalui platform Vercel.</p>
+            </div>
+        </div>
 
-<nav>
+        <nav class="nav-links">
+            <a href="#about">01. Tentang</a>
+            <a href="#services">02. Layanan</a>
+            <a href="#contact">03. Kontak</a>
+        </nav>
+    </aside>
 
-<div class="logo">
-Cloud Computing
+    <main class="content">
+        
+        <section id="about" class="section">
+            <h2 class="section-title">01. Tentang Implementasi</h2>
+            <div class="text-block">
+                <p>Cloud Computing menghilangkan kebutuhan infrastruktur fisik. Pada tugas ini, website di-host pada Vercel untuk memanfaatkan CDN global, memastikan konten statis disajikan secara instan di mana pun pengguna berada.</p>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <h2 class="section-title">02. Kapabilitas Cloud</h2>
+            <ul class="service-list">
+                <li class="service-item">
+                    <h3>Deployment Otomatis</h3>
+                    <p>Integrasi Git yang mulus. Setiap pembaruan kode akan memicu build pipeline di server cloud.</p>
+                </li>
+                <li class="service-item">
+                    <h3>Infrastruktur Edge</h3>
+                    <p>Aset direplikasi ke seluruh dunia, mempercepat waktu muat (load time) secara drastis.</p>
+                </li>
+                <li class="service-item">
+                    <h3>Zero Configuration SSL</h3>
+                    <p>Keamanan bukan lagi opsi. Sertifikat HTTPS di-generate dan diperbarui otomatis.</p>
+                </li>
+                <li class="service-item">
+                    <h3>Serverless Functions</h3>
+                    <p>Skalabilitas backend tanpa perlu melakukan *provisioning* server secara manual.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">03. Informasi</h2>
+            <div class="text-block" style="font-size: 1.1rem; color: var(--gray);">
+                <p>Website ini dikembangkan oleh <strong>Ferdian</strong> (Mahasiswa Teknik Informatika - UMMI) sebagai pemenuhan tugas akhir semester untuk mata kuliah Cloud Computing.</p>
+            </div>
+            
+            <footer>
+                © 2026 Universitas Muhammadiyah Sukabumi
+            </footer>
+        </section>
+
+    </main>
 </div>
-
-<ul>
-<li><a href="#tentang">Tentang</a></li>
-<li><a href="#fitur">Fitur</a></li>
-<li><a href="#statistik">Statistik</a></li>
-</ul>
-
-</nav>
-
-</header>
-
-<section class="hero">
-
-<div>
-
-<h1>Implementasi Cloud Computing Menggunakan Vercel</h1>
-
-<p>
-
-Website ini merupakan implementasi sederhana layanan Cloud Computing dengan memanfaatkan platform Vercel sebagai media deployment website statis. Seluruh aplikasi dibuat menggunakan HTML, CSS, dan JavaScript dalam satu file sehingga mudah dipelajari serta mudah di-deploy.
-
-</p>
-
-<a href="#tentang" class="btn">Pelajari Lebih Lanjut</a>
-
-</div>
-
-</section>
-
-<section id="tentang">
-
-<h2 class="judul">Tentang Cloud Computing</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Apa itu Cloud Computing?</h3>
-<p>
-Cloud Computing adalah teknologi yang memungkinkan pengguna mengakses server, penyimpanan, database, dan layanan lainnya melalui internet.
-</p>
-</div>
-
-<div class="card">
-<h3>Mengapa Vercel?</h3>
-<p>
-Vercel menyediakan proses deployment yang cepat, mudah digunakan, dan sangat cocok untuk website statis maupun aplikasi modern.
-</p>
-</div>
-
-<div class="card">
-<h3>Tujuan Praktikum</h3>
-<p>
-Mempelajari proses deployment website menggunakan layanan Cloud Computing secara langsung melalui platform Vercel.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="fitur">
-
-<h2 class="judul">Keunggulan Website</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Responsif</h3>
-<p>Tampilan menyesuaikan desktop, tablet, dan smartphone.</p>
-</div>
-
-<div class="card">
-<h3>Sederhana</h3>
-<p>Seluruh kode berada dalam satu file HTML.</p>
-</div>
-
-<div class="card">
-<h3>Cepat</h3>
-<p>Website ringan sehingga proses loading menjadi lebih cepat.</p>
-</div>
-
-<div class="card">
-<h3>Cloud Ready</h3>
-<p>Siap diunggah ke GitHub dan langsung di-deploy menggunakan Vercel.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="statistik">
-
-<h2 class="judul">Statistik</h2>
-
-<div class="statistik">
-
-<div class="box">
-<div class="angka" data-target="100">0</div>
-<p>Responsif</p>
-</div>
-
-<div class="box">
-<div class="angka" data-target="99">0</div>
-<p>Ketersediaan</p>
-</div>
-
-<div class="box">
-<div class="angka" data-target="1">0</div>
-<p>Detik Deploy</p>
-</div>
-
-<div class="box">
-<div class="angka" data-target="24">0</div>
-<p>Layanan Cloud</p>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<h3>Cloud Computing - Vercel</h3>
-
-<p>Program Studi Teknik Informatika</p>
-
-<p>Fakultas Sains dan Teknologi</p>
-
-<p>Universitas Muhammadiyah Sukabumi</p>
-
-<p>2026</p>
-
-</footer>
-
-<script>
-
-const angka=document.querySelectorAll(".angka");
-
-angka.forEach(item=>{
-
-const update=()=>{
-
-const target=+item.dataset.target;
-const sekarang=+item.innerText;
-
-const tambah=Math.ceil(target/30);
-
-if(sekarang<target){
-
-item.innerText=sekarang+tambah;
-
-setTimeout(update,50);
-
-}else{
-
-item.innerText=target;
-
-}
-
-}
-
-update();
-
-});
-
-</script>
 
 </body>
 </html>
