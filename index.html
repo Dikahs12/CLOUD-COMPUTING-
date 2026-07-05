@@ -1,24 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Computing | Vercel Deployment</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Computing | Vercel</title>
 
-    <style>
-        /* SELURUH CSS BERADA DI SINI */
-    </style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+}
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    z-index:1000;
+}
+
+nav{
+    width:90%;
+    margin:auto;
+    height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#2563eb;
+}
+
+.hero{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+
+    background:
+    linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:white;
+
+}
+
+.hero h1{
+
+    font-size:55px;
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+
+}
+
+.button{
+
+    display:inline-block;
+    margin-top:35px;
+    background:white;
+    color:#2563eb;
+    padding:15px 35px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+section{
+
+    padding:90px 10%;
+
+}
+
+.title{
+
+    text-align:center;
+    font-size:35px;
+    margin-bottom:60px;
+
+}
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+
+}
+
+.card{
+
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+    color:#2563eb;
+
+}
+
+.stats{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+text-align:center;
+
+}
+
+.stat{
+
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.number{
+
+font-size:45px;
+font-weight:bold;
+color:#2563eb;
+
+}
+
+footer{
+
+background:#111827;
+color:white;
+padding:35px;
+text-align:center;
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <!-- SELURUH HTML BERADA DI SINI -->
+<header>
 
-    <script>
-        // SELURUH JAVASCRIPT BERADA DI SINI
-    </script>
+<nav>
+
+<div class="logo">Cloud Computing</div>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#features">Features</a></li>
+
+<li><a href="#statistics">Statistics</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>Cloud Computing Using Vercel</h1>
+
+<p>
+
+This website demonstrates a simple cloud computing implementation by deploying a static website using the Vercel platform. The project is developed using HTML, CSS, and JavaScript in a single file for simplicity and performance.
+
+</p>
+
+<a href="#about" class="button">Explore Project</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About Project</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Cloud Computing</h3>
+
+<p>
+
+Cloud Computing enables users to access computing resources over the internet efficiently and securely.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Vercel</h3>
+
+<p>
+
+Vercel is a cloud platform designed for deploying frontend applications with fast global delivery.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Deployment</h3>
+
+<p>
+
+This website can be deployed directly from GitHub using the Vercel platform without additional configuration.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="features">
+
+<h2 class="title">Project Features</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Responsive Design</h3>
+
+<p>Optimized for desktop, tablet, and mobile devices.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Single File</h3>
+
+<p>HTML, CSS, and JavaScript are integrated into one document.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Modern Interface</h3>
+
+<p>Clean layout with soft colors, shadows, and smooth spacing.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Fast Deployment</h3>
+
+<p>Ready to deploy directly using GitHub and Vercel.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="statistics">
+
+<h2 class="title">Statistics</h2>
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="number" data-target="100">0</div>
+
+<p>Responsive</p>
+
+</div>
+
+<div class="stat">
+
+<div class="number" data-target="99">0</div>
+
+<p>Availability</p>
+
+</div>
+
+<div class="stat">
+
+<div class="number" data-target="1">0</div>
+
+<p>Second Deployment</p>
+
+</div>
+
+<div class="stat">
+
+<div class="number" data-target="24">0</div>
+
+<p>Cloud Service</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+Cloud Computing Project • Universitas Muhammadiyah Sukabumi
+
+</p>
+
+</footer>
+
+<script>
+
+const numbers=document.querySelectorAll(".number");
+
+numbers.forEach(counter=>{
+
+const update=()=>{
+
+const target=+counter.getAttribute("data-target");
+
+const count=+counter.innerText;
+
+const speed=30;
+
+const increment=Math.ceil(target/speed);
+
+if(count<target){
+
+counter.innerText=count+increment;
+
+setTimeout(update,40);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+}
+
+update();
+
+});
+
+</script>
 
 </body>
 </html>
