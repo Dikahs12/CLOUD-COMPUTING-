@@ -3,123 +3,270 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cloud Computing - Moch Dika Herdian Shofa</title>
+<title>Cloud Computing - DIKA</title>
 <style>
     :root {
-        --bg-light: #fdfdfd;
-        --text-dark: #121212;
-        --gray: #666666;
-        --border: #e0e0e0;
+        --bg-main: #050505;
+        --bg-card: #111111;
+        --text-primary: #ffffff;
+        --text-secondary: #a1a1aa;
+        --border-subtle: rgba(255, 255, 255, 0.1);
+        --accent-glow: rgba(56, 189, 248, 0.15);
+        --accent-color: #38bdf8;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
-    
-    body { background-color: var(--bg-light); color: var(--text-dark); }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
 
-    .layout-wrapper { display: flex; min-height: 100vh; }
+    body {
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
 
-    /* Left Fixed Sidebar (Hero & Nav) */
-    .sidebar { width: 40%; height: 100vh; position: sticky; top: 0; padding: 60px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--border); background: #fff; }
-    
-    .brand { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 60px; }
-    
-    .hero-title h1 { font-size: 4rem; line-height: 1; margin-bottom: 20px; font-weight: 500; letter-spacing: -1.5px; }
-    .hero-title p { color: var(--gray); font-size: 1.1rem; line-height: 1.6; max-width: 90%; }
+    /* Floating Navbar */
+    header {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 800px;
+        background: rgba(17, 17, 17, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--border-subtle);
+        border-radius: 50px;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 999;
+    }
 
-    .nav-links { display: flex; flex-direction: column; gap: 15px; }
-    .nav-links a { color: var(--text-dark); text-decoration: none; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; display: inline-block; transition: 0.3s; border-bottom: 1px solid transparent; width: fit-content; }
-    .nav-links a:hover { border-bottom: 1px solid var(--text-dark); }
+    header h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
 
-    /* Right Scrolling Content */
-    .content { width: 60%; padding: 60px 80px; }
-    
-    .section { margin-bottom: 120px; }
-    .section-title { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    nav {
+        display: flex;
+        gap: 25px;
+    }
 
-    .text-block p { font-size: 1.5rem; line-height: 1.6; color: var(--text-dark); font-weight: 300; }
+    nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+    }
 
-    /* Minimalist Service List */
-    .service-list { list-style: none; }
-    .service-item { border-bottom: 1px solid var(--border); padding: 30px 0; display: flex; flex-direction: column; gap: 10px; transition: 0.3s; }
-    .service-item:hover { padding-left: 20px; background: #fafafa; }
-    .service-item h3 { font-size: 1.8rem; font-weight: 400; }
-    .service-item p { color: var(--gray); font-size: 1.1rem; }
+    nav a:hover {
+        color: var(--text-primary);
+    }
 
-    footer { margin-top: 50px; font-size: 0.9rem; color: var(--gray); }
+    /* Hero Section with Glow Effect */
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+        padding-top: 80px;
+    }
 
-    /* Responsive Stack for Mobile */
-    @media(max-width: 992px) {
-        .layout-wrapper { flex-direction: column; }
-        .sidebar { width: 100%; height: auto; position: relative; padding: 40px; border-right: none; border-bottom: 1px solid var(--border); }
-        .content { width: 100%; padding: 40px; }
-        .hero-title h1 { font-size: 3rem; }
-        .nav-links { margin-top: 40px; }
+    /* Background Glow */
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--accent-glow) 0%, rgba(5,5,5,0) 70%);
+        z-index: -1;
+    }
+
+    .status-badge {
+        display: inline-block;
+        border: 1px solid var(--border-subtle);
+        background: rgba(255, 255, 255, 0.03);
+        padding: 8px 16px;
+        border-radius: 30px;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .status-badge span {
+        width: 8px;
+        height: 8px;
+        background-color: var(--accent-color);
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 10px var(--accent-color);
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 25px;
+        max-width: 900px;
+    }
+
+    .hero h1 span {
+        color: var(--accent-color);
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        max-width: 650px;
+        margin-bottom: 40px;
+    }
+
+    /* Grid Layout for Features */
+    .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 100px 20px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .feature-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        padding: 40px 30px;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--accent-color);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        background: #151515;
+    }
+
+    .feature-card:hover::before {
+        opacity: 1;
+    }
+
+    .feature-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: var(--text-primary);
+    }
+
+    .feature-card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 50px 20px;
+        border-top: 1px solid var(--border-subtle);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        background: var(--bg-card);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 2.8rem; }
+        .hero p { font-size: 1rem; }
+        header { width: 95%; padding: 15px 20px; }
+        nav { display: none; /* Hide on small screens for simplicity */ }
     }
 </style>
 </head>
 <body>
 
-<div class="layout-wrapper">
-    <aside class="sidebar">
-        <div>
-            <div class="brand">Project UAS.</div>
-            <div class="hero-title">
-                <h1>Cloud<br>Computing.</h1>
-                <p>Mendemonstrasikan efisiensi deployment menggunakan ekosistem cloud modern melalui platform Vercel.</p>
-            </div>
-        </div>
-
-        <nav class="nav-links">
-            <a href="#about">01. Tentang</a>
-            <a href="#services">02. Layanan</a>
-            <a href="#contact">03. Kontak</a>
+    <header>
+        <h2>UAS_Cloud.</h2>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">Tentang</a>
+            <a href="#features">Infrastruktur</a>
         </nav>
-    </aside>
+    </header>
 
-    <main class="content">
+    <section class="hero">
+        <div class="status-badge">
+            <span></span> Vercel Network: Online
+        </div>
+        <h1>Implementasi <span>Cloud</span> Tanpa Batas</h1>
+        <p>Mendemonstrasikan efisiensi deployment menggunakan ekosistem cloud modern melalui platform Vercel. Cepat, aman, dan dapat diskalakan.</p>
+    </section>
+
+    <section id="features" class="section-container">
+        <h2 class="section-title">Kapabilitas Layanan</h2>
         
-        <section id="about" class="section">
-            <h2 class="section-title">01. Tentang Implementasi</h2>
-            <div class="text-block">
-                <p>Cloud Computing menghilangkan kebutuhan infrastruktur fisik. Pada tugas ini, website di-host pada Vercel untuk memanfaatkan CDN global, memastikan konten statis disajikan secara instan di mana pun pengguna berada.</p>
-            </div>
-        </section>
-
-        <section id="services" class="section">
-            <h2 class="section-title">02. Kapabilitas Cloud</h2>
-            <ul class="service-list">
-                <li class="service-item">
-                    <h3>Deployment Otomatis</h3>
-                    <p>Integrasi Git yang mulus. Setiap pembaruan kode akan memicu build pipeline di server cloud.</p>
-                </li>
-                <li class="service-item">
-                    <h3>Infrastruktur Edge</h3>
-                    <p>Aset direplikasi ke seluruh dunia, mempercepat waktu muat (load time) secara drastis.</p>
-                </li>
-                <li class="service-item">
-                    <h3>Zero Configuration SSL</h3>
-                    <p>Keamanan bukan lagi opsi. Sertifikat HTTPS di-generate dan diperbarui otomatis.</p>
-                </li>
-                <li class="service-item">
-                    <h3>Serverless Functions</h3>
-                    <p>Skalabilitas backend tanpa perlu melakukan *provisioning* server secara manual.</p>
-                </li>
-            </ul>
-        </section>
-
-        <section id="contact" class="section">
-            <h2 class="section-title">03. Informasi</h2>
-            <div class="text-block" style="font-size: 1.1rem; color: var(--gray);">
-                <p>Website ini dikembangkan oleh <strong>Ferdian</strong> (Mahasiswa Teknik Informatika - UMMI) sebagai pemenuhan tugas akhir semester untuk mata kuliah Cloud Computing.</p>
+        <div class="grid-container">
+            <div class="feature-card">
+                <h3>Global Edge Network</h3>
+                <p>Website disebarkan ke puluhan lokasi server di seluruh dunia. Pengunjung otomatis dialihkan ke server terdekat untuk meminimalkan waktu muat halaman (latency).</p>
             </div>
             
-            <footer>
-                © 2026 Universitas Muhammadiyah Sukabumi
-            </footer>
-        </section>
+            <div class="feature-card">
+                <h3>CI/CD Otomatis</h3>
+                <p>Terintegrasi langsung dengan repository GitHub. Setiap push kode baru akan memicu proses build dan deployment secara otomatis tanpa intervensi manual.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Serverless Backend</h3>
+                <p>Tidak perlu repot memikirkan spesifikasi server fisik. Arsitektur cloud memungkinkan backend berjalan secara serverless dengan skalabilitas tak terbatas.</p>
+            </div>
 
-    </main>
-</div>
+            <div class="feature-card">
+                <h3>Auto SSL/HTTPS</h3>
+                <p>Keamanan tingkat tinggi disertakan secara otomatis. Vercel melakukan provisioning dan perpanjangan sertifikat SSL tanpa perlu konfigurasi tambahan.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Universitas Muhammadiyah Sukabumi | Tugas UAS Cloud Computing</p>
+    </footer>
 
 </body>
 </html>
